@@ -1,0 +1,6 @@
+1)  git clone 'Your URL'
+    EX:- git clone https://github.com/darshan-patel-tops/23May_Laravel.git
+
+2) git add .
+3) git commit -m "First Commit"
+4) git push
