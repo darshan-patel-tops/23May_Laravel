@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <?php ?>
 
     <h2>PHP</h2>
     <p>Hyper-Text Pre-Processor</p>
