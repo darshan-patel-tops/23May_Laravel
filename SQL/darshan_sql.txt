@@ -41,7 +41,7 @@ sql Aggrigate functions
 
 
 
-1. CREATE DATABASE darshan
+1. CREATE DATABASE laravel
 2. CREATE TABLE Person(id INT PRIMARY KEY AUTO_INCREMENT,name varchar(50),email varchar(50))
 3. ALTER TABLE person ADD(salary int)
 4. INSERT INTO person (name,email,salary) VALUES ('darshan','darshan@gmail.com',12000)
