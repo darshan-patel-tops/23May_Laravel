@@ -27,7 +27,7 @@ echo '<br>hello this is $name and he is $type';
 echo '<br>hello this is '.$NAME.' and he is ', $type;
 
 echo ""; //echo supports multipple arguement
-print('<br>hello this is '. $name. ' and he is'. $type); // it will not support multiple arguement
+// print('<br>hello this is ', $name, ' and he is', $type); // it will not support multiple arguement
 
 
 ?>
