@@ -3,6 +3,13 @@
 echo "name is whatever";
 ECHO "<br>name";
 ECho "<br>name";
+// echo ("sdnfghjsgb");
+// echo ("dfgdfg"),("dfgdfdghh");
+// echo ("sgfdsgg","dfgfdghgfdhgfh");  //not valid
+
+// print("dfgdfghdfghgfh");
+// print("dfgfdg"),("sdgdfg");  //not valid
+// print("sdgdfsgg","sdfgfdgh");  //not valid
 
 
 
