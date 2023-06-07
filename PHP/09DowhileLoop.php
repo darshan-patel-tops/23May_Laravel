@@ -1,6 +1,7 @@
 <?php
 
 //it will execute atleast once even if condition is false
+//Exit Controlled Loop
 $food =9;
 
 

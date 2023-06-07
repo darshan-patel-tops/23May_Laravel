@@ -6,7 +6,7 @@
 
 //when you dont know the start/intilization you will use while loop
 //inout control aapke pass nahi hai
-
+//Entry Controlled Loop
 $food =1;
 
 
