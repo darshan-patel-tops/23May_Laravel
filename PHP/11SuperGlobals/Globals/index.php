@@ -30,4 +30,3 @@ echo "</pre>";
 echo "Welcome  ". $_SESSION['userdata'][0];
 ?>
 
-<h1>Index page</h1>
