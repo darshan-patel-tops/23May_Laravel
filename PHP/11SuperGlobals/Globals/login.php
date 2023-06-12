@@ -2,8 +2,33 @@
 
 require_once('header.php');
 
-?>
 
+echo"<pre>";
+// print_r($_COOKIE);
+// print_r($_REQUEST);
+
+
+if(isset($_REQUEST['save']))
+ {
+    if($_COOKIE['name'] == $_REQUEST["name"] &&
+    $_COOKIE['password']== $_REQUEST['password'])
+    {
+
+        // $_SESSION[] = [$_REQUEST['name']];
+        // session
+
+        $_SESSION['userdata'] = [$_REQUEST['name'],$_REQUEST['password']];
+        print_r($_SESSION);
+        echo "valid";
+        header('location:index.php');
+    }
+    else
+    {
+        echo "Invalid id and password";
+    }
+ }
+echo"</pre>";
+?>
 
 <div class="container mt-4">
 

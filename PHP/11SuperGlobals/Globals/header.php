@@ -1,4 +1,7 @@
+<?php
+session_start();
 
+?>
 <link rel="stylesheet" href="https://bootswatch.com/5/morph/bootstrap.css">
 <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
   <div class="container-fluid">
