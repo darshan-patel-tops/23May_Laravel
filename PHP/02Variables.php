@@ -12,5 +12,4 @@
 
 
 $name = [200.234];  //php is a loosely typed language
-
 ?>
