@@ -45,12 +45,12 @@ array("adnan"=>
 array("sports"=>60,"music"=>33)
 )));
 echo"<br>";
-print_r(array_column($multiarr,'10th_Standard'));
 
 // foreach ($multiarr as $key => $value) {
-//     echo "$key is and $value is";
-// }
-echo "<pre>";
+    //     echo "$key is and $value is";
+    // }
+    echo "<pre>";
+    print_r(array_column($multiarr,'10th_Standard'));
 print_r($multiarr);
 echo $multiarr["DPS"]["11th_Standard"]["adnan"]["music"];
 echo "</pre>";
