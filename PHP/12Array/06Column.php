@@ -21,7 +21,7 @@ $a = array(
     );
 
     echo "<pre>";
-    print_r($a);
+    // print_r($a);
 
     foreach ($a as $key => $value) 
     {
@@ -29,7 +29,7 @@ $a = array(
         echo $value['name']."<br>";  //Also the other way
     }
 
-    print_r($data);
+    // print_r($data);
 
     print_r(array_column($a,'name')); //Best way but for 2d array
     echo "</pre>";
