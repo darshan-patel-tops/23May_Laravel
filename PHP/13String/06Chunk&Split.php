@@ -5,7 +5,7 @@ echo $string = "This is a demo demo string and it can hold alpha numerice value 
 
 echo "<br>========Chunk Split=========<br>";
 
-echo chunk_split($string);
+echo chunk_split($string,1);
 
 echo "<br>========count characters=========<br>";
 

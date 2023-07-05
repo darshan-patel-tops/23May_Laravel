@@ -2,8 +2,8 @@
 
     echo "hello this is the practical of string <br>";
     
-    $name = "Name is mohammed";
-    $name1 = "name is Jay Prakash";
+    $name = "Name is Kishan";
+    $name1 = "name is Fazil Bhai";
     $string = "this is a string";
 
     echo "<br>";
