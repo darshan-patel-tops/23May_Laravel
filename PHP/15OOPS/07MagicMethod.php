@@ -25,20 +25,20 @@ __debugInfo()
  {
     public $fazil="fazil is bright student<br>";
     public $kishan="kishan is bright student<br>";
-    public function __construct()
-    {
-        echo "Called Construct<br>";
-    }
-    public function __destruct()
-    {
-        echo "Called Destructor<br>";
-    }
-
-
     public function name()
     {
         echo "Called name Function<br>";
     }
+    // public function __construct()
+    // {
+    //     echo "Called Construct<br>";
+    // }
+    // public function __destruct()
+    // {
+    //     echo "Called Destructor<br>";
+    // }
+
+
 
     public function __get($name)
     {

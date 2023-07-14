@@ -15,9 +15,10 @@ class inherit1
     }
     public function accessinsideparent()
     {
-        // echo $water1;
+        // echo $water;
         echo "inside parent<br>";
-        //Whenever we want to access any data member and member function we use '$this->'
+        //Whenever we want to access any data member 
+        // and member function we use '$this->'
         $this->datafunction();
         echo $this->water;
         echo $this->juice;
@@ -42,8 +43,8 @@ class inehrit2 extends inherit1
 // $object = new inherit1;
 // $object->accessinsideparent();
 $object =  new inehrit2;
-$object->accessinsideparent();
 $object->accessinsidechild();
+$object->accessinsideparent();
 
 
 

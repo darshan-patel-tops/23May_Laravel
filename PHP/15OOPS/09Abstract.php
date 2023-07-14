@@ -2,29 +2,31 @@
 
 
 
-abstract class abstractclass
+abstract class rbi
 {
-    abstract function complusory()
+    abstract function interest();
+    function smscharge()
     {
-        
-    }
-    function functionname()
-    {
-        echo "Called function<br>";
+        echo "sms charge function<br>";
     }
 
 
 }
 
-class inherited extends abstractclass
+class bank extends rbi
 {
+    function interest()
+    {
+        echo "interest dedo <br>";
+    }
     function calling()
     {
         echo "calling <br>";
     }
 }
 
-$object = new inehrited;
+$object = new bank;
+$object->interest();
 
 
 
