@@ -16,8 +16,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!--//tags -->
-<link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<link href="assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="<?php echo $this->baseurl ?>css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="<?php echo $this->baseurl ?>css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <link href="css/easy-responsive-tabs.css" rel='stylesheet' type='text/css'/>
 <!-- //for bootstrap working -->
@@ -49,7 +49,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<!-- header-bot -->
 			<div class="col-md-4 logo_agile">
-				<h1><a href="index.html"><span>E</span>lite Shoppy <i class="fa fa-shopping-bag top_logo_agile_bag" aria-hidden="true"></i></a></h1>
+				<h1><a href="index"><span>E</span>lite Shoppy <i class="fa fa-shopping-bag top_logo_agile_bag" aria-hidden="true"></i></a></h1>
 			</div>
         <!-- header-bot -->
 		<div class="col-md-4 agileits-social top_content">
@@ -95,7 +95,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
 				  <ul class="nav navbar-nav menu__list">
 					<li class="active menu__item menu__item--current"><a class="menu__link" href="index.html">Home <span class="sr-only">(current)</span></a></li>
-					<li class=" menu__item"><a class="menu__link" href="about.html">About</a></li>
+					<li class=" menu__item"><a class="menu__link" href="about">About</a></li>
 					<li class="dropdown menu__item">
 						<a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Men's wear <span class="caret"></span></a>
 							<ul class="dropdown-menu multi-column columns-3">
