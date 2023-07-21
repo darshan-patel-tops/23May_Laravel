@@ -175,12 +175,12 @@
 <a href="#home" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 
 <!-- js -->
-<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="<?php echo $this->baseurl ?>text/javascript" src="js/jquery-2.1.4.min.js"></script>
 <!-- //js -->
-<script src="js/modernizr.custom.js"></script>
+<script src="<?php echo $this->baseurl ?>js/modernizr.custom.js"></script>
 	<!-- Custom-JavaScript-File-Links --> 
 	<!-- cart-js -->
-	<script src="js/minicart.min.js"></script>
+	<script src="<?php echo $this->baseurl ?>js/minicart.min.js"></script>
 <script>
 	// Mini Cart
 	paypal.minicart.render({
@@ -194,7 +194,7 @@
 
 	<!-- //cart-js --> 
 <!-- script for responsive tabs -->						
-<script src="js/easy-responsive-tabs.js"></script>
+<script src="<?php echo $this->baseurl ?>js/easy-responsive-tabs.js"></script>
 <script>
 	$(document).ready(function () {
 	$('#horizontalTab').easyResponsiveTabs({
@@ -219,16 +219,16 @@
 </script>
 <!-- //script for responsive tabs -->		
 <!-- stats -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<script src="js/jquery.countup.js"></script>
+	<script src="<?php echo $this->baseurl ?>js/jquery.waypoints.min.js"></script>
+	<script src="<?php echo $this->baseurl ?>js/jquery.countup.js"></script>
 	<script>
 		$('.counter').countUp();
 	</script>
 <!-- //stats -->
 <!-- start-smoth-scrolling -->
-<script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/jquery.easing.min.js"></script>
-<script type="text/javascript">
+<script type="<?php echo $this->baseurl ?>text/javascript" src="js/move-top.js"></script>
+<script type="<?php echo $this->baseurl ?>text/javascript" src="js/jquery.easing.min.js"></script>
+<script type="<?php echo $this->baseurl ?>text/javascript">
 	jQuery(document).ready(function($) {
 		$(".scroll").click(function(event){		
 			event.preventDefault();
@@ -256,6 +256,6 @@
 
 
 <!-- for bootstrap working -->
-<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="<?php echo $this->baseurl ?>text/javascript" src="js/bootstrap.js"></script>
 </body>
 </html>
