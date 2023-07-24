@@ -15,7 +15,7 @@ class model
             $this->connection = new mysqli("localhost","root","","23may_laravel");
             // echo "success";
         } catch (\Throwable $th) {
-            // echo "fail";
+            echo "fail";
             //throw $th;
         }    
     }
@@ -24,7 +24,22 @@ class model
     {
         if($data)
         {
-            // print_r($data);
+            echo "<pre>";
+            echo "inside if";
+            echo "<br>";
+            print_r($data);
+            echo "<br>";
+            $name = $_REQUEST['name'];
+            $password = $_REQUEST['password'];
+            $email = $_REQUEST['email'];
+            $mobile = $_REQUEST['mobile'];
+$sql = "insert into user (name,password,email,mobile)" . "values ('".$name . "','".$password."" . "','".$email."" . "','".$mobile."')";
+            // $value = "values ('".$name . "','".$password."" . "','".$email."" . "','".$mobile."')"  ;
+            echo $sql;
+            // $query = $sql.$value;
+            // echo $query;
+            $this->connection->query($sql); //this is how you perform query
+            echo "</pre>";
 
         }
         else
@@ -34,6 +49,6 @@ class model
         // print_r($_REQUEST);
     }
 }
-$object = new model;
+// $object = new model;
 
 ?>

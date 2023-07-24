@@ -7,6 +7,8 @@ class controller extends model
 
     public function __construct()
     {
+        parent::__construct();
+
         // echo "<pre>";
         // print_r($_SERVER['PATH_INFO']);
         // print_r($_SERVER);   
@@ -32,6 +34,7 @@ class controller extends model
                 // echo "</pre>";
                 $validate = $_REQUEST;
                 $this->register($validate);
+                // $this->register($_REQUEST);
                 require_once("view/register.php");
             break;
           
