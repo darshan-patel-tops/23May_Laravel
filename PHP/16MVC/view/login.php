@@ -1,14 +1,14 @@
 <div class="container">
   <div class="card">
     <h2>Login Form</h2>
-    <form>
+    <form method="post">
       <label for="username">Username</label>
-      <input type="text" id="username" placeholder="Enter your username">
+      <input type="text" id="username" name="username" placeholder="Enter your username,email,mobile">
 
       <label for="password">Password</label>
-      <input type="password" id="password" placeholder="Enter your password">
+      <input type="password" id="password" name="password" placeholder="Enter your password">
 
-      <button type="submit">Login</button>
+      <button type="submit" name="login_btn">Login</button>
     </form>
   </div>
 </div>

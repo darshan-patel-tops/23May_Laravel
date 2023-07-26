@@ -12,14 +12,16 @@
     <h2>Register Form</h2>
     <form action="" method="post">
       <label for="name">Name</label>
-      <input type="text" id="name" name="name" placeholder="Enter your name">
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" placeholder="Enter your username" required>
       <label for="email">email</label>
-      <input type="text" id="email" name="email" placeholder="Enter your email">
+      <input type="text" id="email" name="email" placeholder="Enter your email" required>
       <label for="mobile">mobile</label>
-      <input type="text" id="mobile" name="mobile" placeholder="Enter your mobile">
+      <input type="text" id="mobile" name="mobile" placeholder="Enter your mobile" required>
 
       <label for="password">Password</label>
-      <input type="password" name="password" id="password" placeholder="Enter your password">
+      <input type="password" name="password" id="password" placeholder="Enter your password" required>
 
       <button type="submit" name="register_btn">Register</button>
     </form>

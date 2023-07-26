@@ -26,6 +26,20 @@ class controller extends model
                     require_once("view/index.php");
                     require_once("view/footer.php");
                 break;
+            
+                case '/login':
+                echo "<pre>";
+                // print_r($_REQUEST);
+                
+                array_pop($_REQUEST);
+                // print_r($_REQUEST);
+                    $data = $_REQUEST;
+                    $this->login($data);
+                echo "</pre>";
+                    // require_once('view/header.php');
+                    require_once("view/login.php");
+                    // require_once("view/footer.php");
+                break;
 
 
             case '/register':
