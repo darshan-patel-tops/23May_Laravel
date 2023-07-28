@@ -36,17 +36,23 @@ class model
         $sqlex = $this->connection->query($SQL);
         if($sqlex->num_rows>0)
         {
+             // $FetchData = $sqlex->fetch_all(); // numeric Array 
+            // $FetchData = $sqlex->fetch_array();  // numeric and assoc
+            // $FetchData = $sqlex->fetch_assoc();  //  assoc
+            // $FetchData = $sqlex->fetch_field();  //  table column
+            // $FetchData = $sqlex->fetch_row();  //  single and only numeric array
+            $fetchdata = $sqlex->fetch_object();  //  object res
             // print_r($sqlex->fetch_object()->role_as);
-           if($sqlex->fetch_object()->role_as == 1)
-           {
-            // echo "inside if";
-            header("location:admin/dashboard");
-        }
-        else
-        {
+        //    if($sqlex->fetch_object()->role_as == 1)
+        //    {
+        //     // echo "inside if";
+        //     header("location:admin/dashboard");
+        // }
+        // else
+        // {
             
-            header("location:home");
-           }
+        //     header("location:home");
+        //    }
             
            
         }
