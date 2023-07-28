@@ -4,6 +4,7 @@ class controller extends model
 {
 
     public $baseurl = "http://localhost/Batches/23May_Laravel/PHP/16MVC/assets/";
+    public $adminurl = "http://localhost/Batches/23May_Laravel/PHP/16MVC/assets/admin/";
 
     public function __construct()
     {
@@ -26,12 +27,35 @@ class controller extends model
                     require_once("view/index.php");
                     require_once("view/footer.php");
                 break;
+            case '/admin/dashboard':
+                echo "<pre>";
+                // print_r($_SERVER);
+                echo "</pre>";
+                    require_once('view/adminheader.php');
+                    require_once("view/adminindex.php");
+                    require_once("view/adminfooter.php");
+                break;
+            // case '/admin':
+            //     echo "<pre>";
+            //     // print_r($_SERVER);
+            //     echo "</pre>";
+            //         require_once('view/adminheader.php');
+            //         require_once("view/adminindex.php");
+            //         require_once("view/adminfooter.php");
+            //     break;
+            // case '/admin-index':
+            //     echo "<pre>";
+            //     // print_r($_SERVER);
+            //     echo "</pre>";
+            //         require_once('view/adminheader.php');
+            //         require_once("view/adminindex.php");
+            //         require_once("view/adminfooter.php");
+            //     break;
             
                 case '/login':
                 echo "<pre>";
                 // print_r($_REQUEST);
                 
-                array_pop($_REQUEST);
                 // print_r($_REQUEST);
                     $data = $_REQUEST;
                     $this->login($data);

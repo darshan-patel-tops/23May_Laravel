@@ -10,6 +10,5 @@
 
 //$name             you dont have to define it
 
-
-$name = [200.234];  //php is a loosely typed language
+// $name = [200.234];  //php is a loosely typed language
 ?>
