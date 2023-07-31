@@ -20,6 +20,31 @@ class model
         }    
     }
 
+
+    public function select($table) 
+    {
+        $SQL = "Select * from $table";
+        // print_r($SQL);
+        $sqlex= $this->connection->query($SQL);
+        // print_r($sqlex);
+        if($sqlex->num_rows>0)
+        {
+            echo "<pre>";
+            // foreach()
+            // {
+            $fetchdata = $sqlex->fetch_object();
+            // }
+            // print_r($fetchdata);
+            echo "</pre>";
+            return  $response['data']=$fetchdata;
+        }
+        else
+        {
+            echo "<h1>No data found</h1>";
+        }
+        // exit;
+    }
+
     public function login($data)
     {
         // print_r($_REQUEST);
@@ -27,11 +52,11 @@ class model
         {
             // array_pop($_REQUEST);
 
-            print_r($data);
+            // print_r($data);
         
         $SQL = "Select * from user where email='$data[username]'
         or mobile ='$data[username]' or username='$data[username]' and password='$data[password]'";
-        echo $SQL;
+        // echo $SQL;
         echo "<br>";
         $sqlex = $this->connection->query($SQL);
         if($sqlex->num_rows>0)
@@ -42,17 +67,21 @@ class model
             // $FetchData = $sqlex->fetch_field();  //  table column
             // $FetchData = $sqlex->fetch_row();  //  single and only numeric array
             $fetchdata = $sqlex->fetch_object();  //  object res
-            // print_r($sqlex->fetch_object()->role_as);
-        //    if($sqlex->fetch_object()->role_as == 1)
-        //    {
-        //     // echo "inside if";
-        //     header("location:admin/dashboard");
-        // }
-        // else
-        // {
+            // print_r($fetchdata);
+            // print_r($fetchdata->role_as);
             
-        //     header("location:home");
-        //    }
+            // print_r($sqlex->fetch_object());  //  object res
+            // print_r($sqlex->fetch_object()->role_as);
+           if($fetchdata->role_as == 1)
+           {
+            // echo "inside if";
+            header("location:admin/dashboard");
+        }
+        else
+        {
+            
+            header("location:home");
+           }
             
            
         }

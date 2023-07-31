@@ -75,7 +75,22 @@ class controller extends model
                 // $this->register($_REQUEST);
                 require_once("view/register.php");
             break;
-          
+
+            case '/admin/all-users':
+
+                // echo "<pre>";
+                $response = $this->select("user");
+                // print_r($response);
+                // echo "</pre>";
+                // $this->fetchdata;
+                // $this->select("");
+                // print_r($_REQUEST);
+                // exit;
+
+                require_once('view/adminheader.php');
+                require_once("view/admin/alluser.php");
+                require_once("view/adminfooter.php");          
+                break;
             default:
                 echo "inside default";
         }
