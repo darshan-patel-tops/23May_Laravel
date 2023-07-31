@@ -88,7 +88,8 @@ class controller extends model
                 // exit;
 
                 require_once('view/adminheader.php');
-                require_once("view/admin/alluser.php");
+                require_once("view/admin/alluser
+                .php");
                 require_once("view/adminfooter.php");          
                 break;
             default:
