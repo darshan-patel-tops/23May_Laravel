@@ -32,11 +32,17 @@ class model
             echo "<pre>";
             // foreach()
             // {
-            $fetchdata = $sqlex->fetch_object();
+
+                while ( $fetchdata = $sqlex->fetch_object()) 
+                {
+                    $data[]=$fetchdata;
+                    // $data[]=$sqlex;
+                }
+            // $fetchdata = $sqlex->fetch_object();
             // }
             // print_r($fetchdata);
             echo "</pre>";
-            return  $response['data']=$fetchdata;
+            return  $response['data']=$data;
         }
         else
         {
@@ -134,6 +140,20 @@ class model
             // echo "No data found";
         }   
         // print_r($_REQUEST);
+    }
+
+
+
+    public function delete($id,$table)
+    {
+        // $SQL = "DELETE  FROM $table where id=$id";
+        // echo $SQL;
+        // echo "<script> alert('are you sure???')  </script>";
+        // $this->connection->query($SQL);
+
+
+
+
     }
 }
 // $object = new model;

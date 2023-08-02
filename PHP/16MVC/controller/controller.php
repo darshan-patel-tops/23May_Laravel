@@ -5,7 +5,6 @@ class controller extends model
 
     public $baseurl = "http://localhost/Batches/23May_Laravel/PHP/16MVC/assets/";
     public $adminurl = "http://localhost/Batches/23May_Laravel/PHP/16MVC/assets/admin/";
-
     public function __construct()
     {
         parent::__construct();
@@ -75,21 +74,23 @@ class controller extends model
                 // $this->register($_REQUEST);
                 require_once("view/register.php");
             break;
-
+            
             case '/admin/all-users':
 
-                // echo "<pre>";
+                echo "<pre>";
                 $response = $this->select("user");
                 // print_r($response);
-                // echo "</pre>";
+                // print_r($_REQUEST);
+
+                $this->delete($_REQUEST['id'],"user");
+                echo "</pre>";
                 // $this->fetchdata;
                 // $this->select("");
                 // print_r($_REQUEST);
                 // exit;
 
                 require_once('view/adminheader.php');
-                require_once("view/admin/alluser
-                .php");
+                require_once("view/admin/alluser.php");
                 require_once("view/adminfooter.php");          
                 break;
             default:
