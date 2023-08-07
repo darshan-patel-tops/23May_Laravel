@@ -152,7 +152,13 @@
       <td><?php echo $res->password; ?></td>
       <td><?php echo $res->role_as; ?></td>
       <td>
-        <button class="btn btn-sm btn-warning">Update</button>
+        <form action="update-user/<?php echo $res->id; ?>" method="post">
+
+          <a href="update-user/<?php echo $res->id; ?>">
+          <button class="btn btn-sm btn-warning" name="update" value="<?php echo $res->id; ?>">Update</button>
+
+          </a>
+        </form>
         <form action="" method="post">
         <button class="btn btn-sm btn-danger" name="delete-btn" value="<?php Echo $res->id; ?>">  Delete  </button>
         </form>

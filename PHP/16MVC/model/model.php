@@ -155,7 +155,71 @@ class model
 
 
     }
+public function update($table, $where="")
+
+{
+    $SQL = "select * from $table ";
+
+    if($where != "")
+    {
+        $SQL .= " Where id = $where;";
+    }
+    $res = $this->connection->query($SQL);
+    echo $SQL;
+    print_r($res);
+
+
+    if($res->num_rows>0)
+    {
+        $response = $res->fetch_object();
+        print_r($response);
+    }
+    // exit();
+
+}
+
+    public function selectwhere($table,$where = "")
+    {
+        $SQL = "Select * from $table";
+        // print_r($SQL);
+        // echo $SQL;
+
+        if($where != "")
+        {
+            $SQL .= " WHERE";
+
+            foreach($where as $key => $value)
+            {
+                $SQL .= "$key = $value AND";
+            }
+        }
+        echo $SQL;
+        $sqlex= $this->connection->query($SQL);
+        // print_r($sqlex);
+        if($sqlex->num_rows>0)
+        {
+            echo "<pre>";
+            // foreach()
+            // {
+
+                while ( $fetchdata = $sqlex->fetch_object()) 
+                {
+                    $data[]=$fetchdata;
+                    // $data[]=$sqlex;
+                }
+            // $fetchdata = $sqlex->fetch_object();
+            // }
+            // print_r($fetchdata);
+            echo "</pre>";
+            return  $response['data']=$data;
+        }
+        else
+        {
+            echo "<h1>No data found</h1>";
+        }
+    }
 }
 // $object = new model;
+// $object->selectwhere("user","name");
 
 ?>

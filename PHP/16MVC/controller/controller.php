@@ -75,13 +75,21 @@ class controller extends model
                 require_once("view/register.php");
             break;
             
+                case "/admin/update-user/":
+                    echo "isnide page";
+                        break;
+
             case '/admin/all-users':
 
                 echo "<pre>";
                 $response = $this->select("user");
                 // print_r($response);
                 // print_r($_REQUEST);
-
+if(isset($_REQUEST["update"]))
+{
+    $this->update("user","$_REQUEST[update]");
+    print_r($_REQUEST);
+}
                 $this->delete($_REQUEST['id'],"user");
                 echo "</pre>";
                 // $this->fetchdata;
