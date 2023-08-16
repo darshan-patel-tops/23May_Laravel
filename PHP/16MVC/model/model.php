@@ -155,28 +155,31 @@ class model
 
 
     }
-public function update($table, $where="")
-
-{
-    $SQL = "select * from $table ";
-
-    if($where != "")
+    public function update($tbl, $data, $where)
     {
-        $SQL .= " Where id = $where;";
+        $SQL = "UPDATE users SET ";
+        foreach ($data as $key => $value) {
+            $SQL .= " $key ='$value',";
+        }
+        $SQL = rtrim($SQL, ",");
+        $SQL .= " WHERE ";
+        foreach ($where as $key => $value) {
+            $SQL .= " $key = $value AND";
+        }
+        $SQL = rtrim($SQL, "AND");
+        echo $SQL;
+        $SQLEx = $this->connection->query($SQL);
+        if ($SQLEx > 0) {
+            $Respose["Code"] = "1";
+            $Respose["Msg"] = "Success";
+            $Respose["Data"] = "1";
+        } else {
+            $Respose["Code"] = "0";
+            $Respose["Msg"] = "Try again";
+            $Respose["Data"] = 0;
+        }
+        return $Respose;
     }
-    $res = $this->connection->query($SQL);
-    echo $SQL;
-    print_r($res);
-
-
-    if($res->num_rows>0)
-    {
-        $response = $res->fetch_object();
-        print_r($response);
-    }
-    // exit();
-
-}
 
     public function selectwhere($table,$where = "")
     {
@@ -192,6 +195,8 @@ public function update($table, $where="")
             {
                 $SQL .= "$key = $value AND";
             }
+            $SQL = rtrim($SQL, "AND");
+
         }
         echo $SQL;
         $sqlex= $this->connection->query($SQL);
