@@ -17,6 +17,7 @@ class model
         } catch (\Throwable $th) {
             echo "fail";
             //throw $th;
+            
         }    
     }
 

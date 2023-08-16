@@ -2,7 +2,7 @@
 
 if (isset($_REQUEST['Download'])) {
     # code...
-    $file_name = "downloadfile.zip";
+    $file_name = "image.jpg";
     header('Content-Type: application/octet-stream');
     header('Content-Disposition: attachment; filename="' . $file_name . '"');
     header('Pragma: public');

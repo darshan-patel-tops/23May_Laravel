@@ -13,7 +13,7 @@ if (isset($_POST['sendmail'])) {
     $mail->Host = 'smtp.gmail.com';              // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                     // Enable SMTP authentication
     $mail->Username   = 'darshan.patel.tops@gmail.com';                     //SMTP username
-    $mail->Password   = '';  // your password 2step varified 
+    $mail->Password   = 'vyoxngpabcryxkqe';  // your password 2step varified 
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;                
     $mail->Port = 587;     //587 is used for Outgoing Mail (SMTP) Server.
     $mail->setFrom('darshan.patel.tops@gmail.com', 'Name');
@@ -21,7 +21,8 @@ if (isset($_POST['sendmail'])) {
     $mail->isHTML(true);  // Set email format to HTML
     
     $bodyContent = "<h1>HeY!,</h1>: OTP : $OTP";
-    $bodyContent .= '<p>This is a email that tops send you From LocalHost using PHPMailer</p>';
+    $bodyContent .= "<img src='https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW58ZW58MHx8MHx8fDA%3D&w=1000&q=80' height='100px' width='100px'>";
+    $bodyContent .= "<p style='color:red'>"."This is a email that tops send you From LocalHost using PHPMailer</p>";
     $mail->Body    = $bodyContent."<br>".$_REQUEST["body"];
     $mail->Subject = 'Email from Localhost by tops';
     if(!$mail->send()) {
@@ -34,7 +35,9 @@ if (isset($_POST['sendmail'])) {
 
 ?>
 <form method="post">
-    <input type="text" name="email" id="email">
-    <input type="text" name="body" id="body">
+    <input type="text" name="email" id="email" placeholder="email">
+    <input type="text" name="body" id="body" placeholder="message">
     <input type="submit" name="sendmail" id="sendmail">
 </form>
+
+<!-- <img src="" alt="" height=""> -->
