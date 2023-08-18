@@ -158,17 +158,18 @@ class model
     }
     public function update($tbl, $data, $where)
     {
-        $SQL = "UPDATE users SET ";
+        $SQL = "UPDATE $tbl SET ";
         foreach ($data as $key => $value) {
             $SQL .= " $key ='$value',";
         }
         $SQL = rtrim($SQL, ",");
         $SQL .= " WHERE ";
         foreach ($where as $key => $value) {
-            $SQL .= " $key = $value AND";
+            $SQL .= " $key = $value AND ";
         }
         $SQL = rtrim($SQL, "AND");
         echo $SQL;
+        // exit;
         $SQLEx = $this->connection->query($SQL);
         if ($SQLEx > 0) {
             $Respose["Code"] = "1";
@@ -184,22 +185,28 @@ class model
 
     public function selectwhere($table,$where = "")
     {
+
+        // echo "Inside function";
+        // echo "$table";
+        // echo "$where";
+        // exit;
         $SQL = "Select * from $table";
         // print_r($SQL);
         // echo $SQL;
 
         if($where != "")
         {
-            $SQL .= " WHERE";
+            $SQL .= " WHERE ";
 
             foreach($where as $key => $value)
             {
-                $SQL .= "$key = $value AND";
+                $SQL .= " $key = $value AND";
             }
             $SQL = rtrim($SQL, "AND");
 
         }
-        echo $SQL;
+        // echo $SQL;
+        // exit;
         $sqlex= $this->connection->query($SQL);
         // print_r($sqlex);
         if($sqlex->num_rows>0)
@@ -215,7 +222,8 @@ class model
                 }
             // $fetchdata = $sqlex->fetch_object();
             // }
-            // print_r($fetchdata);
+            // print_r($data);
+            // exit;
             echo "</pre>";
             return  $response['data']=$data;
         }

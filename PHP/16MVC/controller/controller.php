@@ -1,3 +1,5 @@
+
+
 <?php
 require_once("model/model.php");
 class controller extends model
@@ -33,6 +35,41 @@ class controller extends model
                     require_once('view/adminheader.php');
                     require_once("view/adminindex.php");
                     require_once("view/adminfooter.php");
+                break;
+            case '/admin/update-user':
+                if(isset($_REQUEST['id']))
+                {
+
+                    $data = $this->selectwhere("user",$_REQUEST);
+                }
+                    // print_r($data);
+                    // exit;
+                    require_once('view/adminheader.php');
+                    require_once("view/admin/edituser.php");
+
+                    if(isset($_REQUEST['update_btn']))
+                    {   
+                        // echo "<pre>";
+                        // // echo "inside if";
+                        // print_r($_REQUEST);
+                        // print_r($_FILES);
+                        // exit;
+                        // echo "</pre>";
+                        if(isset($_FILES))
+                        {
+                            $path = $_FILES["image"]["tmp_name"];
+                            $destination = "upload/". $_FILES["image"]['name'];
+                            $filename = $_FILES["image"]["name"];
+                            move_uploaded_file($path,$destination);
+                            
+                        }
+                        // unset($_REQUEST)
+                        $this->update("user",$_REQUEST,$_REQUEST["id"]);
+                    }
+                
+
+               
+                    // require_once("view/adminfooter.php");
                 break;
             // case '/admin':
             //     echo "<pre>";
@@ -102,6 +139,7 @@ if(isset($_REQUEST["update"]))
                 require_once("view/adminfooter.php");          
                 break;
             default:
+                print_r($_REQUEST);
                 echo "inside default";
         }
         }
@@ -116,7 +154,6 @@ if(isset($_REQUEST["update"]))
 
 
 $controller = new controller;
-
 
 
 
