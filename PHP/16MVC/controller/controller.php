@@ -36,42 +36,84 @@ class controller extends model
                     require_once("view/adminindex.php");
                     require_once("view/adminfooter.php");
                 break;
-            case '/admin/update-user':
-                if(isset($_REQUEST['id']))
-                {
-
-                    $data = $this->selectwhere("user",$_REQUEST);
+            case '/admin/update':
+                if (isset($_POST['update_btn'])) {
+                    echo "Inside if";
+                    if ($_FILES['prof_pic']['error'] == 0) {
+                        $image = time().$_FILES['prof_pic']['name'];
+                        
+                            echo $image;
+                        move_uploaded_file($_FILES['prof_pic']['tmp_name'], "upload/$image");
+                    }else{
+                        $image = $_REQUEST['prof_pic_old'];
+                    }
+                    $data=array("username"=>$_REQUEST['username'],
+                    "name"=>$_REQUEST['name'],
+                    "email"=>$_REQUEST['email'],
+                    "image"=>$image,
+                    "mobile"=>$_REQUEST['mobile']);
+                    // echo "<pre>";
+                    // print_r($newArray);
+                    $res = $this->update('user',$data,array("id"=>$_REQUEST['id']));
+                    // print_r($res);
+                    // echo "</pre>";
+                    
+                    if ($res['Code'] == "1") {
+                        header("location:all-users");
+                    }else{
+                        echo "<script>alert('Error while inserting try after sometime !!!!')</script>";
+                    }
                 }
+
+                break;
+
+
+            case '/admin/update-user':
+             
                     // print_r($data);
+                    echo "<pre>";
+                    print_r($_REQUEST);
+                    echo "</pre>";
+                      if(isset($_REQUEST['id']))
+                    {
+    
+                        $data = $this->selectwhere("user",$_REQUEST);
+                    }
                     // exit;
                     require_once('view/adminheader.php');
                     require_once("view/admin/edituser.php");
 
-                    if (isset($_POST['update_btn'])) {
+                    // if (isset($_POST['update_btn'])) {
+                    //     echo "Inside if";
+                    //     if ($_FILES['prof_pic']['error'] == 0) {
+                    //         $image = $_FILES['prof_pic']['name'];
+                            
+                    //             echo $image;
+                    //         move_uploaded_file($_FILES['prof_pic']['tmp_name'], "upload/$image");
+                    //     }else{
+                    //         $image = $_REQUEST['prof_pic_old'];
+                    //     }
+                    //     $data=array("username"=>$_REQUEST['username'],
+                    //     "name"=>$_REQUEST['name'],
+                    //     "email"=>$_REQUEST['email'],
+                    //     "image"=>$image,
+                    //     "mobile"=>$_REQUEST['mobile']);
+                    //     // echo "<pre>";
+                    //     // print_r($newArray);
+                    //     $res = $this->update('users',$data,array("id"=>$_REQUEST['userid']));
+                    //     // print_r($res);
+                    //     // echo "</pre>";
                         
-                        if ($_FILES['prof_pic']['error'] == 0) {
-                            $image = $_FILES['prof_pic']['name'];
-                            move_uploaded_file($_FILES['prof_pic']['tmp_name'], "upload/$image");
-                        }else{
-                            $image = $_REQUEST['prof_pic_old'];
-                        }
-                        $data=array("username"=>$_REQUEST['username'],
-                        "name"=>$_REQUEST['name'],
-                        "email"=>$_REQUEST['email'],
-                        "prof_pic"=>$image,
-                        "mobile"=>$_REQUEST['mobile']);
-                        // echo "<pre>";
-                        // print_r($newArray);
-                        $res = $this->update('users',$data,array("id"=>$_REQUEST['userid']));
-                        // print_r($res);
-                        // echo "</pre>";
-                        
-                        if ($res['Code'] == "1") {
-                            header("location:viewalluser");
-                        }else{
-                            echo "<script>alert('Error while inserting try after sometime !!!!')</script>";
-                        }
-                    }
+                    //     if ($res['Code'] == "1") {
+                    //         header("location:viewalluser");
+                    //     }else{
+                    //         echo "<script>alert('Error while inserting try after sometime !!!!')</script>";
+                    //     }
+                    // }
+
+
+
+                  
                     break; 
             // case '/admin':
             //     echo "<pre>";
@@ -121,12 +163,12 @@ class controller extends model
             case '/admin/all-users':
 
                 echo "<pre>";
-                $response = $this->select("user");
-                // print_r($response);
+                $Respose = $this->select("user");
+                // print_r($Respose);
                 // print_r($_REQUEST);
 if(isset($_REQUEST["update"]))
 {
-    $this->update("user","$_REQUEST[update]");
+    $this->update("user","$_REQUEST[update]",$_REQUEST['id']);
     print_r($_REQUEST);
 }
                 $this->delete($_REQUEST['id'],"user");

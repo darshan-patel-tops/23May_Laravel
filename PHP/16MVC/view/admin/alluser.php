@@ -124,6 +124,7 @@
                     <th scope="col">Email</th>
       <th scope="col">Mobile</th>
       <th scope="col">Password</th>
+      <th scope="col">Image</th>
       <th scope="col">Role</th>
       <th scope="col">Action</th>
     </tr>
@@ -131,25 +132,37 @@
   <tbody>
     <?php
     echo "<pre>";
-    // print_r($response);
+    // print_r($Respose);
+    // print_r($Respose['Data'][0]);
+    // print_r($Respose['Data'][1]);
     // print_r($response->name);
-    print_r($_REQUEST);
+    // print_r($_REQUEST);
     echo "</pre>";
     ?>
       <!-- <th scope="row">1</th> -->
-      <?php  foreach($response as $res)
+      <?php  foreach($Respose['Data'] as $res)
       {
-        // echo "<pre>";
-        // // print_r($res);
-        // echo "</pre>";
+        echo "<pre>";
+        // echo "Before res<br>";
+        // print_r($res[0]);
+        // echo "<br>after res<br>";
+        
+        echo "</pre>";
         ?>
         <tr>
+         
+
+          
       <td><?php echo $res->id; ?></td>
       <td><?php echo $res->name; ?></td>
       <td><?php echo $res->username; ?></td>
       <td><?php echo $res->email; ?></td>
       <td><?php echo $res->mobile; ?></td>
       <td><?php echo $res->password; ?></td>
+      <td>
+
+        <img src="../upload/<?php echo $res->image ?>" alt="" height="100px" width="100px">
+      </td>
       <td><?php echo $res->role_as; ?></td>
       <td>
         <form action="update-user" method="post">
@@ -161,12 +174,14 @@
         </form>
         <form action="" method="post">
         <button class="btn btn-sm btn-danger" name="delete-btn" value="<?php Echo $res->id; ?>">  Delete  </button>
-        </form>
         <!-- <a href="<?php echo "?id=$res->id" ?>" style="color:aliceblue;   text-decoration: none;">  Delete  </a> -->
+        </form>
+        
       </td>
       
     </tr>
-    <?php  } ?>
+    <?php }    ?>
+   
    
   </tbody>
 </table>

@@ -1,6 +1,4 @@
 
-
-
 <div class="content-wrapper">
             <!-- Content -->
 
@@ -18,7 +16,7 @@
                     </div>
                     <div class="card-body">
                         
-                      <form method="post" enctype="multipart/form-data">
+                      <form method="post" enctype="multipart/form-data" action="update">
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="name">Name</label>
                           <div class="col-sm-10">
@@ -48,7 +46,8 @@
                           <label class="col-sm-2 col-form-label" for="prof_pic">Image</label>
                           <div class="col-sm-10">
                           <input type="file" class="form-control"  name="prof_pic" id="prof_pic">
-                      <input type="hidden" class="form-control"  name="prof_pic_old" value="<?php echo $data[0]->prof_pic; ?>" id="prof_pic_old">
+                          <img src="../upload/<?php echo $data[0]->image ?>" alt="image not found" height = "100px" width = "100px">
+                      <input type="hidden" class="form-control"  name="prof_pic_old" value="<?php echo $data[0]->image; ?>" id="prof_pic_old">
                        </div>
                         </div>
                         <div class="row mb-3">
@@ -57,12 +56,12 @@
                             <input type="text" class="form-control" id="password" name="password" value="<?php echo $data[0]->password ?>">
                           </div>
                         </div>
-                        <div class="row mb-3">
+                        <!-- <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="image">image</label>
                           <div class="col-sm-10">
                             <input type="file" class="form-control" id="image" name="image">
                           </div>
-                        </div>
+                        </div> -->
                        
                         <div class="row mb-3">
                        
@@ -89,3 +88,8 @@
 
             <div class="content-backdrop fade"></div>
           </div>
+
+
+
+          <br />
+<b>Warning</b>:  Undefined property: stdClass::$prof_pic in <b>C:xampphtdocsBatches23May_LaravelPHP16MVCviewadminedituser.php</b> on line <b>51</b><br />

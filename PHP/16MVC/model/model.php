@@ -1,7 +1,7 @@
 <?php
 
 
-
+date_default_timezone_set("asia/kolkata");
 
 class model
 {
@@ -172,7 +172,7 @@ class model
         $SQL = rtrim($SQL, ",");
         $SQL .= " WHERE ";
         foreach ($where as $key => $value) {
-            $SQL .= " $key = $value AND ";
+            $SQL .= " $key = $value AND";
         }
         $SQL = rtrim($SQL, "AND");
         echo $SQL;
