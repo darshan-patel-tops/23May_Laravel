@@ -47,30 +47,32 @@ class controller extends model
                     require_once('view/adminheader.php');
                     require_once("view/admin/edituser.php");
 
-                    if(isset($_REQUEST['update_btn']))
-                    {   
-                        // echo "<pre>";
-                        // // echo "inside if";
-                        // print_r($_REQUEST);
-                        // print_r($_FILES);
-                        // exit;
-                        // echo "</pre>";
-                        if(isset($_FILES))
-                        {
-                            $path = $_FILES["image"]["tmp_name"];
-                            $destination = "upload/". $_FILES["image"]['name'];
-                            $filename = $_FILES["image"]["name"];
-                            move_uploaded_file($path,$destination);
-                            
+                    if (isset($_POST['update_btn'])) {
+                        
+                        if ($_FILES['prof_pic']['error'] == 0) {
+                            $image = $_FILES['prof_pic']['name'];
+                            move_uploaded_file($_FILES['prof_pic']['tmp_name'], "upload/$image");
+                        }else{
+                            $image = $_REQUEST['prof_pic_old'];
                         }
-                        // unset($_REQUEST)
-                        $this->update("user",$_REQUEST,$_REQUEST["id"]);
+                        $data=array("username"=>$_REQUEST['username'],
+                        "name"=>$_REQUEST['name'],
+                        "email"=>$_REQUEST['email'],
+                        "prof_pic"=>$image,
+                        "mobile"=>$_REQUEST['mobile']);
+                        // echo "<pre>";
+                        // print_r($newArray);
+                        $res = $this->update('users',$data,array("id"=>$_REQUEST['userid']));
+                        // print_r($res);
+                        // echo "</pre>";
+                        
+                        if ($res['Code'] == "1") {
+                            header("location:viewalluser");
+                        }else{
+                            echo "<script>alert('Error while inserting try after sometime !!!!')</script>";
+                        }
                     }
-                
-
-               
-                    // require_once("view/adminfooter.php");
-                break;
+                    break; 
             // case '/admin':
             //     echo "<pre>";
             //     // print_r($_SERVER);

@@ -45,6 +45,13 @@
                           </div>
                         </div>
                         <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="prof_pic">Image</label>
+                          <div class="col-sm-10">
+                          <input type="file" class="form-control"  name="prof_pic" id="prof_pic">
+                      <input type="hidden" class="form-control"  name="prof_pic_old" value="<?php echo $data[0]->prof_pic; ?>" id="prof_pic_old">
+                       </div>
+                        </div>
+                        <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="password">password</label>
                           <div class="col-sm-10">
                             <input type="text" class="form-control" id="password" name="password" value="<?php echo $data[0]->password ?>">
