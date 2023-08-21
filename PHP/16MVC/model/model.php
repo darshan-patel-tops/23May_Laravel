@@ -14,41 +14,48 @@ class model
             //code...
             $this->connection = new mysqli("localhost","root","","23may_laravel");
             // echo "success";
-        } catch (\Throwable $th) {
+        } catch (Exception $e) {
             echo "fail";
             //throw $th;
+            if (!file_exists("log")) {
+                mkdir("log");
+            }
+            $msg = "Error DateTime =>> " . date('d-m-Y H:i:s A');
+            $msg .= PHP_EOL . "Error Msg =>> " . $e->getMessage();
+            file_put_contents("log/" . date('d_m_Y') . "_log.txt", PHP_EOL . $msg . PHP_EOL, FILE_APPEND);
+            echo $e->getMessage();
+            exit;
             
         }    
     }
 
 
-    public function select($table) 
+    public function select($tbl, $where = "") 
     {
-        $SQL = "Select * from $table";
-        // print_r($SQL);
-        $sqlex= $this->connection->query($SQL);
-        // print_r($sqlex);
-        if($sqlex->num_rows>0)
-        {
-            echo "<pre>";
-            // foreach()
-            // {
-
-                while ( $fetchdata = $sqlex->fetch_object()) 
-                {
-                    $data[]=$fetchdata;
-                    // $data[]=$sqlex;
-                }
-            // $fetchdata = $sqlex->fetch_object();
-            // }
-            // print_r($fetchdata);
-            echo "</pre>";
-            return  $response['data']=$data;
+        $SQL = "SELECT * FROM $tbl"; //this is a dynamic parameter recv krya 
+        if ($where != "") {
+            $SQL .= " WHERE ";
+            foreach ($where as $key => $value) {
+                $SQL .= " $key = $value AND";
+            }
+            $SQL = rtrim($SQL, "AND");
         }
-        else
-        {
-            echo "<h1>No data found</h1>";
+        // echo $SQL;
+        // exit; 
+        $SQLEx = $this->connection->query($SQL);
+        if ($SQLEx->num_rows > 0) {
+            while ($Fetch = $SQLEx->fetch_object()) {
+                $FetchData[] = $Fetch;
+            }
+            $Respose["Code"] = "1";
+            $Respose["Msg"] = "Success";
+            $Respose["Data"] = $FetchData;
+        } else {
+            $Respose["Code"] = "0";
+            $Respose["Msg"] = "Try again";
+            $Respose["Data"] = 0;
         }
+        return $Respose;
         // exit;
     }
 
