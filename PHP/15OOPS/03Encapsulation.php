@@ -3,7 +3,7 @@
 //Encapsulation means wrapping up the data in the single unit
 class mobile
 {
-    function video()
+   public function video()
     {
         echo "video<br>";
     }

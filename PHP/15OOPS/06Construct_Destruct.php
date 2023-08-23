@@ -26,7 +26,7 @@ class marriage
 $marriage = new marriage;
 $marriage->shadi();
 
-//Construct is invoked by default when created
+//Construct is invoked by default when object created
 //construct never return anything
 //it is init value
 

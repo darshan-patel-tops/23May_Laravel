@@ -10,5 +10,12 @@ foreach ($items as $point => $value)
 }
 
 
+foreach ($items as  $value)
+{
+    echo " the value is $value<br>";
+
+}
+
+
 
 ?>

@@ -25,6 +25,7 @@ class bank extends rbi
     }
 }
 
+// $object = new rbi;
 $object = new bank;
 $object->interest();
 

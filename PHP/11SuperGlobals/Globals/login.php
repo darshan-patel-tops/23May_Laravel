@@ -10,8 +10,7 @@ echo"<pre>";
 
 if(isset($_REQUEST['save']))
  {
-    if($_COOKIE['name'] == $_REQUEST["name"] &&
-    $_COOKIE['password']== $_REQUEST['password'])
+    if($_COOKIE['name'] == $_REQUEST["name"] && $_COOKIE['password']== $_REQUEST['password'])
     {
 
         // $_SESSION[] = [$_REQUEST['name']];

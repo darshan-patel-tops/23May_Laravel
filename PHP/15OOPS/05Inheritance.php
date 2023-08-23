@@ -14,6 +14,10 @@ class car
     {
         echo "steering<br>";
     }
+    public function engine()
+    {
+        echo "badi car ka engine <br>";
+    }
 }
 
 
@@ -23,8 +27,11 @@ class evcar extends car
     {
         echo "battery<br>";
     }
+   
     public function engine()
     {
+        parent::engine();
+        // self::engine();
         echo "engine<br>";
     }
 }

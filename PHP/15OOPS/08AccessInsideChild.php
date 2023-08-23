@@ -13,6 +13,7 @@ class inherit1
     {
         echo "called data function<br>";
     }
+    // private function accessinsideparent()
     public function accessinsideparent()
     {
         // echo $water;

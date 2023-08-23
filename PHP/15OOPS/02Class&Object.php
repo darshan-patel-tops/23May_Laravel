@@ -23,6 +23,7 @@ class iphone
 $object = new iphone;
 //object is necessary to access class
 // video();
+// iphone::video();
 
 $object->video();
 $object->sms();

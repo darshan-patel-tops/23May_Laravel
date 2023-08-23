@@ -4,7 +4,7 @@ require_once('header.php');
 if(isset($_REQUEST["clear"]))
 {
 
-    unset($_SESSION["product_data"]);
+    unset($_SESSION["cart_data"]);
 
 }
 
