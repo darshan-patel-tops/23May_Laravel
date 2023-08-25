@@ -68,8 +68,8 @@ class model
 
             // print_r($data);
         
-        $SQL = "Select * from user where email='$data[username]'
-        or mobile ='$data[username]' or username='$data[username]' and password='$data[password]'";
+        $SQL = "Select * from user where (email='$data[username]'
+        or mobile ='$data[username]' or username='$data[username]') and password='$data[password]'";
         // echo $SQL;
         echo "<br>";
         $sqlex = $this->connection->query($SQL);
