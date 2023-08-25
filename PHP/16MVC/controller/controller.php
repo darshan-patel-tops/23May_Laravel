@@ -5,8 +5,8 @@ require_once("model/model.php");
 class controller extends model
 {
 
-    public $baseurl = "http://localhost/Batches/23May_Laravel/PHP/16MVC/assets/";
-    public $adminurl = "http://localhost/Batches/23May_Laravel/PHP/16MVC/assets/admin/";
+    public $baseurl = "http://localhost/Batches/23May_Laravel/PHP/16MVC/asset/";
+    public $adminurl = "http://localhost/Batches/23May_Laravel/PHP/16MVC/asset/admin/";
     public function __construct()
     {
         parent::__construct();
