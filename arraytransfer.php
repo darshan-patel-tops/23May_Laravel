@@ -6,33 +6,74 @@
     <title>Document</title>
 </head>
 <body>
-<button id="transferButton">Transfer Element</button>
-    <p>First Array: <span id="firstArray"></span></p>
-    <p>Second Array: <span id="secondArray"></span></p>
+<button id="transfer">Transfer Array</button>
+    <p>First Array: <span id="first"></span></p>
+    <p>Second Array: <span id="second"></span></p>
 
 
     <script>
-const firstArray = [-1,-2,-3,-4,-5];
-const secondArray = [1, 2, 3, 4, 5]; 
 
-function transferElement() {
-    if (secondArray.length > 0) {
-        const transferredElement = secondArray.shift(); 
-        firstArray.push(transferredElement); 
-        updateArraysDisplay();
-    } else {
-        alert("Second array is empty!");
+
+const first = [];
+const second = [1, 2, 3, 4, 5];
+let index = 0; 
+const transfer = document.getElementById("transfer");
+const first_display = document.getElementById("first");
+const second_display = document.getElementById("second");
+
+transfer.addEventListener("click",() => 
+    {
+        if (index < second.length) 
+        {
+            const move = second[index];
+            first.push(move);
+            index++; 
+            update();
+        } 
+        else 
+        {
+            alert("All Items have been transferred");
+        }
     }
-}
+        );
 
-function updateArraysDisplay() {
-    document.getElementById("firstArray").textContent = JSON.stringify(firstArray);
-    document.getElementById("secondArray").textContent = JSON.stringify(secondArray);
-}
+    function update() 
+    {
+        first_display.innerHTML = first;
+        second_display.innerHTML = second; 
+    }
 
-document.getElementById("transferButton").addEventListener("click", transferElement);
+        update();
 
-updateArraysDisplay();
+
+// const first = [];
+// const second = [1, 2, 3, 4, 5];
+
+// document.getElementById("transfer").addEventListener("click", 
+//     function() 
+//     {
+
+//     if (second.length > 0) 
+//     {
+//         first.push(second.shift());
+//         update();
+//     } else 
+//     {
+//         alert("Second array is empty!");
+//     }
+    
+//     }
+// );
+
+// function update() {
+//     document.getElementById("first").textContent = JSON.stringify(first);
+//     document.getElementById("second").textContent = JSON.stringify(second);
+// }
+
+// update();
+
+
+
 
     </script>
 </body>
