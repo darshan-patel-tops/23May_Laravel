@@ -21,17 +21,25 @@ const transfer = document.getElementById("transfer");
 const first_display = document.getElementById("first");
 const second_display = document.getElementById("second");
 
+   
+console.log("Index Value at starting is ",index);
+// console.log(first);
+// console.log(second);
 transfer.addEventListener("click",() => 
+{
+    if (index < second.length) 
     {
-        if (index < second.length) 
-        {
-            const move = second[index];
-            first.push(move);
+        const move = second[index];
+        first.push(move);
+            // console.log("1st Array Updation",first);
+            console.log("Before Change",index);
             index++; 
+            console.log("After Change",index);
             update();
         } 
         else 
         {
+            console.log(index);
             alert("All Items have been transferred");
         }
     }
