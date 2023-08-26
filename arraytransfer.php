@@ -15,7 +15,7 @@
 
 
 const first = [];
-const second = [1, 2, 3, 4, 5];
+const second = [" a "," b "," c "," d "," e "];
 let index = 0; 
 const transfer = document.getElementById("transfer");
 const first_display = document.getElementById("first");
