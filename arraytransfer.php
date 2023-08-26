@@ -52,23 +52,26 @@ transfer.addEventListener("click",() =>
 // document.getElementById("transfer").addEventListener("click", 
 //     function() 
 //     {
-
+//
 //     if (second.length > 0) 
 //     {
 //         first.push(second.shift());
 //         update();
-//     } else 
-//     {
-//         alert("Second array is empty!");
+//     } 
+//     
+//      else 
+//      {
+//          alert("Second array is empty!");
+//      }
+//
 //     }
-    
-//     }
-// );
+//  );
 
-// function update() {
-//     document.getElementById("first").textContent = JSON.stringify(first);
-//     document.getElementById("second").textContent = JSON.stringify(second);
-// }
+            //  function update() 
+            // {
+            //     document.getElementById("first").textContent = JSON.stringify(first);
+            //     document.getElementById("second").textContent = JSON.stringify(second);
+            // }
 
 // update();
 
