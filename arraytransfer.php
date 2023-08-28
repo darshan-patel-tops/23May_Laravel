@@ -14,7 +14,7 @@
     <script>
 
 
-const first = [];
+const first = [1,2,3,4,5];
 const second = [" a "," b "," c "," d "," e "];
 let index = 0; 
 const transfer = document.getElementById("transfer");
@@ -60,26 +60,26 @@ transfer.addEventListener("click",() =>
 // document.getElementById("transfer").addEventListener("click", 
 //     function() 
 //     {
-//
+
 //     if (second.length > 0) 
 //     {
 //         first.push(second.shift());
 //         update();
 //     } 
-//     
+    
 //      else 
 //      {
 //          alert("Second array is empty!");
 //      }
-//
+
 //     }
 //  );
 
-            //  function update() 
-            // {
-            //     document.getElementById("first").textContent = JSON.stringify(first);
-            //     document.getElementById("second").textContent = JSON.stringify(second);
-            // }
+//              function update() 
+//             {
+//                 document.getElementById("first").textContent = JSON.stringify(first);
+//                 document.getElementById("second").textContent = JSON.stringify(second);
+//             }
 
 // update();
 
