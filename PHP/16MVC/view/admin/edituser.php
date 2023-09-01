@@ -92,4 +92,3 @@
 
 
           <br />
-<b>Warning</b>:  Undefined property: stdClass::$prof_pic in <b>C:xampphtdocsBatches23May_LaravelPHP16MVCviewadminedituser.php</b> on line <b>51</b><br />
