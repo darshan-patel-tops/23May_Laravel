@@ -32,6 +32,7 @@ transfer.addEventListener("click",() =>
         const move = second[index];
         first.push(move);
             // console.log("1st Array Updation",first);
+            // console.log("1st Array Updation",first);
             console.log("Before Change",index);
             index++; 
             console.log("After Change",index);
