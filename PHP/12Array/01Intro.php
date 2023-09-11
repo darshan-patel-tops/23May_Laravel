@@ -3,7 +3,7 @@
 
 <?php
 
-// Index Array[Key Numeric Only]
+// Index Array[Key Numeric Only] // starts from 0
 $arr = array("name",false,1,2.45,);
 
 echo "<pre>";

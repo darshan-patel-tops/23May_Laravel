@@ -10,7 +10,6 @@ abstract class rbi
         echo "sms charge function<br>";
     }
 
-
 }
 
 class bank extends rbi
