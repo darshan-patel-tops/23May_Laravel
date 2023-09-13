@@ -1,0 +1,3 @@
+Composer Update
+copy .env.example .env
+php artisan key:generate
