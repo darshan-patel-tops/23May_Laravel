@@ -25,7 +25,7 @@ echo "end for loop";
 // echo"Hello this is for loop 3";
 
 
-$name =["Fazil","Kishan","Darshan sir "];
+$name =["Fazil","Kishan","Darshan "];
 
 for($memb=0; $memb<5; $memb++)
 {

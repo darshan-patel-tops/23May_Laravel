@@ -36,8 +36,10 @@
     <h3>CMS (content management sys)</h3>
     <ul>
         <li>Wordpress</li>
-        <li>drupal</li>
+        <li>Drupal</li>
         <li>Magento CMS based framework</li>
+        <li>Shopify CMS based framework</li>
+        <li>Shopline CMS based framework</li>
     </ul>
 </body>
 </html>
