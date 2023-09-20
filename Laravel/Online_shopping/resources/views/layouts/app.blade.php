@@ -6,7 +6,7 @@
 
 <head>
 
-    <title>FreshCart - eCommerce HTML Template</title>
+    <title>FreshCart</title>
     <link href="assets/libs/slick-carousel/slick/slick.css" rel="stylesheet" />
     <link href="assets/libs/slick-carousel/slick/slick-theme.css" rel="stylesheet" />
     <link href="assets/libs/tiny-slider/dist/tiny-slider.css" rel="stylesheet">
@@ -447,8 +447,8 @@
                 Account
               </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="pages/signin.html">Sign in</a></li>
-                                    <li><a class="dropdown-item" href="pages/signup.html">Signup</a></li>
+                                    <li><a class="dropdown-item" href="/login">Sign in</a></li>
+                                    <li><a class="dropdown-item" href="/register">Signup</a></li>
                                     <li><a class="dropdown-item" href="pages/forgot-password.html">Forgot Password</a></li>
                                     <li class="dropdown-submenu dropend">
                                         <a class="dropdown-item dropdown-list-group-item dropdown-toggle" href="#">
@@ -617,8 +617,8 @@
                 Account
               </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="pages/signin.html">Sign in</a></li>
-                                    <li><a class="dropdown-item" href="pages/signup.html">Signup</a></li>
+                                    <li><a class="dropdown-item" href="/login">Sign in</a></li>
+                                    <li><a class="dropdown-item" href="/register">Signup</a></li>
                                     <li><a class="dropdown-item" href="pages/forgot-password.html">Forgot Password</a></li>
                                     <li class="dropdown-submenu dropend">
                                         <a class="dropdown-item dropdown-list-group-item dropdown-toggle" href="#">
