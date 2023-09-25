@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('username')->unique();
             $table->string('email')->unique();
             $table->string('mobile')->unique();
+            // $table->unsignedBigInteger('role_as')->comment('0 = user , 1 = admin')->default('0')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

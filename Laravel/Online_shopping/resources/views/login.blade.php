@@ -1,6 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
+
+{{-- @error('status')
+<h4>{{ $message }}</h4>
+@enderror --}}
+
+
+
+@if(session('status'))
+<h1 class="alert alert-danger"> {{session('status')}}</h1>
+@endif
+
 <section class="my-lg-14 my-8">
     <div class="container">
       <!-- row -->
@@ -17,17 +28,18 @@
           </div>
 
           <form action="" method="post">
+            @csrf
             <div class="row g-3">
               <!-- row -->
 
               <div class="col-12">
                 <!-- input -->
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Email" required>
+                <input type="email" name="email" class="form-control" id="inputEmail4" placeholder="Email" required>
               </div>
               <div class="col-12">
                 <!-- input -->
                 <div class="password-field position-relative">
-      <input type="password" id="fakePassword" placeholder="Enter Password" class="form-control" required >
+      <input type="password" name="password" id="fakePassword" placeholder="Enter Password" class="form-control" required >
       <span><i id="passwordToggler"class="bi bi-eye-slash"></i></span>
     </div>
 
