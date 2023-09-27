@@ -39,6 +39,8 @@ class UserResource extends Resource
             ->columns([
                 TextColumn::make('id')->sortable(),
                 TextColumn::make('name'),
+                TextColumn::make('role_as'),
+                TextColumn::make('password')->limit(5),
                 TextColumn::make('username')->searchable(),
                 TextColumn::make('email'),
                 TextColumn::make('mobile'),
