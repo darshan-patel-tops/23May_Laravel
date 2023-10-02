@@ -336,8 +336,8 @@
                         </div>
                     </div>
                     <div class="d-none d-lg-block">
-                        <ul class="navbar-nav align-items-center ">
-                            <li class="nav-item dropdown">
+                        <ul class="navbar-nav align-items-center " id="dynamic_navbar">
+                            {{-- <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Home
               </a>
@@ -348,8 +348,8 @@
                                     <li><a class="dropdown-item" href="pages/index-4.html">Home 4 <span
                       class="badge bg-light-info text-dark-info ms-1">New</span></a></li>
                                 </ul>
-                            </li>
-                            <li class="nav-item dropdown">
+                            </li> --}}
+                            {{-- <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Shop
               </a>
@@ -367,8 +367,8 @@
                                     <li><a class="dropdown-item" href="pages/shop-cart.html">Shop Cart</a></li>
                                     <li><a class="dropdown-item" href="pages/shop-checkout.html">Shop Checkout</a></li>
                                 </ul>
-                            </li>
-                            <li class="nav-item dropdown">
+                            </li> --}}
+                            {{-- <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Stores
               </a>
@@ -377,8 +377,8 @@
                                     <li><a class="dropdown-item" href="pages/store-grid.html">Store Grid</a></li>
                                     <li><a class="dropdown-item" href="pages/store-single.html">Store Single</a></li>
                                 </ul>
-                            </li>
-                            <li class="nav-item dropdown dropdown-fullwidth">
+                            </li> --}}
+                            {{-- <li class="nav-item dropdown dropdown-fullwidth">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Mega menu
               </a>
@@ -428,8 +428,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            </li>
-                            <li class="nav-item dropdown">
+                            </li> --}}
+                            {{-- <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Pages
               </a>
@@ -441,7 +441,7 @@
                                     <li><a class="dropdown-item" href="pages/404error.html">404 Error</a></li>
                                     <li><a class="dropdown-item" href="pages/contact.html">Contact</a></li>
                                 </ul>
-                            </li>
+                            </li> --}}
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Account
