@@ -22,6 +22,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ToggleColumn;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
 
 class ProductResource extends Resource
 {
@@ -44,11 +45,13 @@ class ProductResource extends Resource
                                 'top'=>"TOP",
                                 'bottom'=>"BOTTOM"
                             ]),
-                        RichEditor::make('description'),
+                        // RichEditor::make('description'),
+                        TinyEditor::make('description'),
                     ]),
                     Repeater::make('point')->schema([
 
-                        TextInput::make('point'),
+                        // TextInput::make('point'),
+                        TinyEditor::make('point'),
                     ]),
                     ])
             ]);
