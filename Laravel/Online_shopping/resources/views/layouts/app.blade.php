@@ -337,6 +337,55 @@
                     </div>
                     <div class="d-none d-lg-block">
                         <ul class="navbar-nav align-items-center " id="dynamic_navbar">
+
+
+
+
+
+
+                            @foreach ($navbar as $data)
+<h5>Navbar :{{ $data->navbar }}</h5>
+<h5>URL :{{ $data->url }}</h5>
+    @if ($data->sub_navbar > 0)
+
+        @foreach ($data->sub_navbar as $item)
+
+                @foreach ($item as $key => $random)
+
+                <li class="nav-item ">
+                    <a class="nav-link" href="dashboard/index.html">
+                            {{ $random }}
+                    </a>
+                </li>
+                    {{-- <h5>{{ $key }} : {{ $random }}</h5> --}}
+                @endforeach
+
+            {{-- <h5>{{ $item }}</h5> --}}
+
+            {{-- <h5>{{ $item }}</h5> --}}
+        {{-- <h5>{{ $key  }} : {{$item }}</h5> --}}
+        @endforeach
+         {{-- <h5>{{ $data->sub_navbar[0]['sub_navbar'] }}</h5> --}}
+        {{-- <h5>conidition : inside if</h5> --}}
+    @else
+        {{-- <h5>condition : inside else</h5> --}}
+    @endif
+@endforeach
+
+                            <li class="nav-item ">
+                                <a class="nav-link" href="dashboard/index.html">
+                                        Dashboard
+                                </a>
+                            </li>
+
+
+
+
+
+
+
+
+
                             {{-- <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Home
