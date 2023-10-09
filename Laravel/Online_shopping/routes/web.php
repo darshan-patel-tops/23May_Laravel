@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\APIController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\HomeController;
@@ -30,7 +31,7 @@ Route::get('/register',[AuthController::class,'register'])->middleware('guest');
 Route::post('/register',[AuthController::class,'store']);
 Route::get('/logout',[AuthController::class,'logout']);
 
-
+// Route::get('allusers',[APIController::class,'allusers']);
 
 
 Route::get('authorized/google', [GoogleController::class, 'redirectToGoogle']);

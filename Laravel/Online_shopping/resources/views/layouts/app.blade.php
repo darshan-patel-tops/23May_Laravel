@@ -343,7 +343,8 @@
 
 
 
-                            @foreach ($navbar as $data)
+
+                            {{-- @foreach ($navbar as $data)
 <h5>Navbar :{{ $data->navbar }}</h5>
 <h5>URL :{{ $data->url }}</h5>
     @if ($data->sub_navbar > 0)
@@ -357,20 +358,24 @@
                             {{ $random }}
                     </a>
                 </li>
-                    {{-- <h5>{{ $key }} : {{ $random }}</h5> --}}
                 @endforeach
 
+                @endforeach
+                @else
+                @endif
+                @endforeach --}}
+
+
+
+
+                {{-- <h5>condition : inside else</h5> --}}
+                {{-- <h5>{{ $key }} : {{ $random }}</h5> --}}
             {{-- <h5>{{ $item }}</h5> --}}
 
             {{-- <h5>{{ $item }}</h5> --}}
         {{-- <h5>{{ $key  }} : {{$item }}</h5> --}}
-        @endforeach
          {{-- <h5>{{ $data->sub_navbar[0]['sub_navbar'] }}</h5> --}}
         {{-- <h5>conidition : inside if</h5> --}}
-    @else
-        {{-- <h5>condition : inside else</h5> --}}
-    @endif
-@endforeach
 
                             <li class="nav-item ">
                                 <a class="nav-link" href="dashboard/index.html">

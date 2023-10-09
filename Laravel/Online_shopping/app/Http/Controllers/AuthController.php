@@ -23,7 +23,7 @@ class AuthController extends Controller
         // dd($credential);
         if(Auth::attempt($credential))
         {
-            // dd(Auth::user()->role_as);
+            // dd(Auth::user());
             if(Auth::user()->role_as == 0)
             {
 
