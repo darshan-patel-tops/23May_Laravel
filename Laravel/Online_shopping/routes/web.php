@@ -31,6 +31,11 @@ Route::get('/register',[AuthController::class,'register'])->middleware('guest');
 Route::post('/register',[AuthController::class,'store']);
 Route::get('/logout',[AuthController::class,'logout']);
 
+Route::get('/forget-password',[AuthController::class,'forget_password']);
+Route::post('/forget-password',[AuthController::class,'mail_link']);
+
+Route::get('/reset-password/{token}',[AuthController::class,'reset_password']);
+Route::post('/reset-password/{token}',[AuthController::class,'reset']);
 // Route::get('allusers',[APIController::class,'allusers']);
 
 
