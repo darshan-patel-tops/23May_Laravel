@@ -49,6 +49,18 @@ function display()
       <td>Otto</td>
       <td>@mdo</td>
     </tr>
+    <tr>
+      <th scope="row">1</th>
+      <td>Otto</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">1</th>
+      <td>Otto</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
     
     `
 // console.log(data);

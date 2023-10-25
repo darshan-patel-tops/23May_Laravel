@@ -25,7 +25,7 @@
         </div>
         <div class="mb-3">
             <label for="username" class="form-label">Enter Your Username</label>
-            <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp" onblur="checkusername()">
+            <input type="text"  class="form-control" id="username" name="username" aria-describedby="emailHelp" onblur="checkusername()">
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
