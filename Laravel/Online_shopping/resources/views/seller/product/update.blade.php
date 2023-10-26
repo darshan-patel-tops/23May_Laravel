@@ -4,12 +4,12 @@
 
 
 @section('content')
-
+{{-- {{ dd($data[0]->name) }} --}}
 
 <div class="col-xxl mt-5">
                   <div class="card mb-4">
                     <div class="card-header d-flex align-items-center justify-content-between">
-                      <h5 class="mb-0">Add Product</h5>
+                      <h5 class="mb-0">Update Product</h5>
                       <a href="/seller/all-products">
 
                           <button class=" float-end btn btn-danger"> Back</button>
@@ -17,26 +17,28 @@
                       {{-- <small >BACK</small> --}}
                     </div>
                     <div class="card-body">
-                      <form enctype="multipart/form-data" method="POST" action="{{ url('/seller/add-products') }}">
+                      <form enctype="multipart/form-data" method="POST" action="{{ url('/seller/update-product/'.$data[0]->id) }}">
                             @csrf
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-default-name">Name</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" id="basic-default-name" name="name" required />
+                            <input type="text" class="form-control" id="basic-default-name" value="{{ $data[0]->name }}" name="name" required />
                           </div>
                         </div>
 
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-default-name">Price</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" id="basic-default-name" name="price" required />
+                            <input type="text" class="form-control" value="{{ $data[0]->price }}" id="basic-default-name" name="price" required />
                           </div>
                         </div>
 
                         <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-name">Description</label>
+                          <label class="col-sm-2 col-form-label"  for="basic-default-name">Description</label>
                           <div class="col-sm-10">
-                            <textarea name="description"  class="form-control" id="description" cols="30" rows="3" required></textarea>
+                            <textarea name="description"  class="form-control" id="description" cols="30" rows="3" required>
+                                {{ $data[0]->description }}
+                            </textarea>
                             {{-- <input type="text" class="form-control" id="basic-default-name" name="description" /> --}}
                           </div>
                         </div>
@@ -44,7 +46,7 @@
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-default-name">Quantity</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" id="basic-default-name" required name="quantity" />
+                            <input type="text" class="form-control" value="{{ $data[0]->quantity }}" id="basic-default-name" required name="quantity" />
                           </div>
                         </div>
 
@@ -71,7 +73,7 @@
 
                         <div class="row justify-content-end">
                           <div class="col-sm-10">
-                            <button type="submit" class="btn btn-primary">Save</button>
+                            <button type="submit" class="btn btn-primary">UPDATE</button>
                           </div>
                         </div>
 

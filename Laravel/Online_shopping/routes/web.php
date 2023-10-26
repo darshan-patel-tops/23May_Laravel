@@ -48,3 +48,7 @@ Route::get('seller/dashbaord',[SellerHomeController::class,'index']);
 
 Route::get('seller/all-products',[ProductController::class,'index']);
 Route::get('seller/add-products',[ProductController::class,'add']);
+Route::post('seller/add-products',[ProductController::class,'store']);
+
+Route::get('seller/update-product/{id}',[ProductController::class,'update']);
+Route::post('seller/update-product/{id}',[ProductController::class,'update_change']);

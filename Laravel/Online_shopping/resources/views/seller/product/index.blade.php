@@ -4,9 +4,13 @@
 
 @section('content')
 
-  <!-- Bordered Table -->
-  <div class="card mt-5 mx-5">
-      <h5 class="card-header">All  Products</h5>
+{{-- {{ dd($products); }} --}}
+<!-- Bordered Table -->
+<div class="card mt-5 mx-5">
+    @if(session('message'))
+    <h1 class="alert alert-success"> {{session('message')}}</h1>
+    @endif
+    <h5 class="card-header">All  Products</h5>
       <div class="d-flex justify-content-end">
           <a href="/seller/add-products">
             <button class="btn btn-primary ">Add Products</button>
@@ -28,7 +32,40 @@
             </tr>
           </thead>
           <tbody>
+            @foreach ($products as $item)
+            <tr>
+                <td>{{$item->id  }}</td>
+                <td>{{$item->name  }}</td>
+                <td></td>
 
+                <td>
+                    @if ($item->visible == 1)
+                    <div class="alert alert-primary" role="alert">
+                        Visible
+                      </div>
+                      @else
+                      <div class="alert alert-danger" role="alert">
+                          Not Visible
+                        </div>
+                      @endif
+
+
+                </td>
+                <td>{{$item->price  }}</td>
+                <td>{{$item->quantity  }}</td>
+                <td>
+                    <a href="/seller/update-product/{{$item->id  }}" class="btn btn-sm btn-primary">
+                        Update
+                    </a>
+                    <a href="" class="btn btn-sm btn-danger">
+                        Delete
+                    </a>
+
+
+
+                </td>
+            </tr>
+            @endforeach
           </tbody>
         </table>
       </div>
