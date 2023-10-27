@@ -44,11 +44,16 @@ Route::post('/reset-password/{token}',[AuthController::class,'reset']);
 Route::get('authorized/google', [GoogleController::class, 'redirectToGoogle']);
 Route::get('authorized/google/callback', [GoogleController::class, 'handleGoogleCallback']);
 
-Route::get('seller/dashbaord',[SellerHomeController::class,'index']);
+Route::get('seller/dashboard',[SellerHomeController::class,'index']);
 
 Route::get('seller/all-products',[ProductController::class,'index']);
 Route::get('seller/add-products',[ProductController::class,'add']);
 Route::post('seller/add-products',[ProductController::class,'store']);
 
 Route::get('seller/update-product/{id}',[ProductController::class,'update']);
-Route::post('seller/update-product/{id}',[ProductController::class,'update_change']);
+// Route::post('seller/update-product/{id}',[ProductController::class,'update_change']);
+// Route::patch('seller/update-product/{id}',[ProductController::class,'update_change']);
+Route::put('seller/update-product/{id}',[ProductController::class,'update_change']);
+
+// Route::get('seller/delete-product/{id}',[ProductController::class,'delete']);
+Route::delete('seller/delete-product/{id}',[ProductController::class,'delete']);

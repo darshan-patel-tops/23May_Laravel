@@ -36,7 +36,7 @@
             <tr>
                 <td>{{$item->id  }}</td>
                 <td>{{$item->name  }}</td>
-                <td></td>
+                <td><img src="/{{ $item->image }}" alt="" height="100px" width="100px"></td>
 
                 <td>
                     @if ($item->visible == 1)
@@ -57,9 +57,13 @@
                     <a href="/seller/update-product/{{$item->id  }}" class="btn btn-sm btn-primary">
                         Update
                     </a>
-                    <a href="" class="btn btn-sm btn-danger">
-                        Delete
-                    </a>
+                    <form action="/seller/delete-product/{{$item->id  }}" method="post">
+                        @csrf
+                        @method('delete')
+                        <button class="btn btn-sm btn-danger">
+                            Delete
+                        </button>
+                    </form>
 
 
 

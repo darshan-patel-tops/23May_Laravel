@@ -17,8 +17,9 @@
                       {{-- <small >BACK</small> --}}
                     </div>
                     <div class="card-body">
-                      <form enctype="multipart/form-data" method="POST" action="{{ url('/seller/update-product/'.$data[0]->id) }}">
+                      <form enctype="multipart/form-data" method="post" action="{{ url('/seller/update-product/'.$data[0]->id) }}">
                             @csrf
+                            @method('put')
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-default-name">Name</label>
                           <div class="col-sm-10">
@@ -53,20 +54,21 @@
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-default-name">Image</label>
                           <div class="col-sm-10">
-                            <input type="file" accept="image/*" required class="form-control" id="basic-default-name" name="image" />
+                            <input type="file" accept="image/*" class="form-control" id="basic-default-name" name="image" />
+                            <img src="/{{ $data[0]->image }}" alt="No image uploaded" height="100px" width="100px">
                           </div>
                         </div>
 
                         <div class="form-check">
-
-                            <input class="form-check-input" type="radio" name="visible" id="flexRadioDefault1">
+                                {{-- {{ dd($data[0]->visible) }} --}}
+                            <input class="form-check-input" {{ $data[0]->visible == 1 ? 'checked':'' }}  type="radio" value="1" name="visible" id="flexRadioDefault1">
                             <label class="form-check-label" for="flexRadioDefault1">
                               Visible
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="radio" name="visible" id="flexRadioDefault2" checked>
-                            <label class="form-check-label" for="flexRadioDefault2">
+                            <input class="form-check-input" {{ $data[0]->visible == 0 ? 'checked':'' }} type="radio" value="0" name="visible" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
                               Not Visible
                             </label>
                           </div>

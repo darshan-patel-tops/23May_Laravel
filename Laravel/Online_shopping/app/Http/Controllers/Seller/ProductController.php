@@ -22,6 +22,7 @@ class ProductController extends Controller
     public function store(Request $request,product2 $data)
     {
         // dd($request->name);
+        // dd($request->files);
         // dd($request);
         // $product2 = product2
 
@@ -31,11 +32,30 @@ class ProductController extends Controller
         //         'quantity' => $request->quantity,
         //         'description' => $request->description,
         // ]);
+
+        if($request->hasFile('image'))
+        {
+            $file = $request->file('image');
+            $path = "upload/product/";
+            $extension = $file->getClientOriginalExtension();
+            $filename = $path .time().'.'.$extension;
+            $file->move($path,$filename);
+
+
+
+
+            // move();
+            // dd($filename);
+
+        }
+
+
             product2::create([
-                             'name' => $request->name,
+                'name' => $request->name,
                 'price' => $request->price,
                 'quantity' => $request->quantity,
                 'description' => $request->description,
+                'image'=>$filename
             ]);
 
 
@@ -58,17 +78,54 @@ class ProductController extends Controller
     {
         // dd($request);
        $data =  product2::where('id','=',$id)->get();
-       $data[0]->update([
+       if($request->hasFile('image'))
+       {
+           $file = $request->file('image');
+           $path = "upload/product/";
+           $extension = $file->getClientOriginalExtension();
+           $filename = $path .time().'.'.$extension;
+           $file->move($path,$filename);
 
-'name' => $request->name,
+
+
+
+           // move();
+           // dd($filename);
+
+           $data[0]->update([
+
+                    'name' => $request->name,
+                    'price' => $request->price,
+                    'quantity' => $request->quantity,
+                    'description' => $request->description,
+                    'image'=>$filename,
+                    'visible'=>$request->visible ? '1' : '0'
+                ]);
+            }
+            $data[0]->update([
+
+                'name' => $request->name,
                 'price' => $request->price,
                 'quantity' => $request->quantity,
                 'description' => $request->description,
+                'visible'=>$request->visible ? '1' : '0'
+                //  'image'=>$filename
 
-
-       ]);
+        ]);
        return redirect('seller/all-products')->with('message','Product Updated Successfully');
 
         // dd($data);
+    }
+
+
+
+    public function delete($id)
+    {
+        $data = product2::findOrFail($id);
+        // dd($data);
+        $data->delete();
+        return redirect('seller/all-products')->with('message','Product Deleted Successfully');
+
+
     }
 }
