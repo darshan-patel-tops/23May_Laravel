@@ -2,21 +2,17 @@
 <html lang="en">
 
 
-<!-- Mirrored from freshcart.codescandy.com/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 30 Mar 2023 10:06:15 GMT -->
-
 <head>
 
     <title>FreshCart</title>
     <link href="assets/libs/slick-carousel/slick/slick.css" rel="stylesheet" />
     <link href="assets/libs/slick-carousel/slick/slick-theme.css" rel="stylesheet" />
     <link href="assets/libs/tiny-slider/dist/tiny-slider.css" rel="stylesheet">
-    <!-- Required meta tags -->
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta content="Codescandy" name="author">
 
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8S4MT3EYG"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
